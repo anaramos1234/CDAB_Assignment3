@@ -1,4 +1,3 @@
-# Instalar paquetes si no los tienes: install.packages(c("shiny", "mongolite", "DT", "dplyr", "jsonlite", "lubridate"))
 library(shiny)
 library(mongolite)
 library(DT)
@@ -59,7 +58,7 @@ ui <- fluidPage(
 # --- LÓGICA DEL SERVIDOR ---
 server <- function(input, output, session) {
   
-  # 1. Cargar y procesar los datos reactivamente
+  # 1. Cargar y procesar los datos
   processed_data <- reactive({
     raw_data <- db$find('{}')
     req(nrow(raw_data) > 0)
@@ -157,7 +156,6 @@ server <- function(input, output, session) {
     df_display <- processed_data()
     req(nrow(df_display) > 0) 
     
-    # Traducimos los nombres de las columnas para la tabla visual
     df_display <- df_display %>% 
       select(label, nodo, inicio, duracion_minutos, seqfu, sha256, gb_movidos) %>%
       rename(Process = label, Node = nodo, Start = inicio, `Duration (min)` = duracion_minutos, 
@@ -173,21 +171,16 @@ server <- function(input, output, session) {
   output$raw_json_view <- renderPrint({
     req(input$logs_table_rows_selected)
     
-    # Obtenemos la fila seleccionada
     fila_filtrada <- input$logs_table_rows_selected
     
-    # Extraemos el ID real del documento seleccionado
     doc_id <- processed_data()$id[fila_filtrada]
-    req(doc_id) # Nos aseguramos de que haya un ID
+    req(doc_id) 
     
-    # Hacemos una consulta a MongoDB solo para ese documento específico
     query <- sprintf('{"@id": "%s"}', doc_id)
     documento_original <- db$find(query)
     
-    # Eliminamos el id interno de MongoDB (_id) si lo añade, para dejar el PROV-O puro
     documento_original$`_id` <- NULL
     
-    # Imprimimos el JSON bonito
     cat(toJSON(documento_original, pretty = TRUE, auto_unbox = TRUE))
   })
 }
