@@ -7,7 +7,6 @@ db <- mongo(collection = "provenance_logs", db = "genomic_lab")
 # 2. Limpiar la colección antes de importar por si lo ejecutas varias veces
 if(db$count() > 0) {
   db$drop()
-  message("Colección anterior borrada para evitar duplicados.")
 }
 
 # 3. Localizar los archivos JSON generados
