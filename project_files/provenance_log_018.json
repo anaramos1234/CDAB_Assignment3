@@ -1,0 +1,61 @@
+{
+  "@context": "http://www.w3.org/ns/prov#",
+  "@id": "urn:uuid:c32de734-c1e3-4da4-80e2-f136d56efa6c",
+  "@type": "Activity",
+  "label": "Processament complet de 3D_118_S5",
+  "startTime": "2026-04-27T09:30:00Z",
+  "endTime": "2026-04-27T09:38:00Z",
+  "executionNode": "cresselia",
+  "sourceDirectory": "/data/input/",
+  "destinationDirectory": "/data/output/3D_118_S5",
+  "wasAssociatedWith": [
+    {
+      "@type": "SoftwareAgent",
+      "label": "seqfu",
+      "version": "1.22.3"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "sha256sum",
+      "version": "sha256sum (GNU coreutils) 8.32"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "Pipeline Nextflow fastq_prov",
+      "repository": "local",
+      "commitId": "N/A",
+      "revision": "N/A"
+    },
+    {
+      "@id": "urn:person:salle_alumni",
+      "@type": "Person",
+      "label": "Usuari executor: salle_alumni",
+      "actedOnBehalfOf": {
+        "@id": "https://ror.org/01y990p52",
+        "@type": "Organization",
+        "label": "La Salle"
+      }
+    }
+  ],
+  "generated": [
+    {
+      "@type": "Entity",
+      "label": "Verificació SHA256",
+      "description": "Resultat de la comprovació de checksum a destí",
+      "value": "3D_118_S5_R1_001.fastq.gz: La suma coincide 3D_118_S5_R2_001.fastq.gz: La suma coincide"
+    },
+    {
+      "@type": "Entity",
+      "label": "Verificació Seqfu",
+      "description": "Resultat de la comprovació d'integritat del format FASTQ",
+      "value": "OK PE 3D_118_S5_R1_001.fastq.gz 0 0 0"
+    },
+    {
+      "@type": "Entity",
+      "label": "FASTQ Files",
+      "totalSizeBytes": "2081453921",
+      "category": "Genet",
+      "fileCount": "2"
+    }
+  ]
+}

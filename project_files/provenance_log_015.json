@@ -1,0 +1,61 @@
+{
+  "@context": "http://www.w3.org/ns/prov#",
+  "@id": "urn:uuid:454f8d0a-9e1b-47da-90fc-340f5dab9d6a",
+  "@type": "Activity",
+  "label": "Processament complet de 3D_115_S5",
+  "startTime": "2026-04-27T09:15:00Z",
+  "endTime": "2026-04-27T09:24:00Z",
+  "executionNode": "mewtwo",
+  "sourceDirectory": "/data/input/",
+  "destinationDirectory": "/data/output/3D_115_S5",
+  "wasAssociatedWith": [
+    {
+      "@type": "SoftwareAgent",
+      "label": "seqfu",
+      "version": "1.22.3"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "sha256sum",
+      "version": "sha256sum (GNU coreutils) 8.32"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "Pipeline Nextflow fastq_prov",
+      "repository": "local",
+      "commitId": "N/A",
+      "revision": "N/A"
+    },
+    {
+      "@id": "urn:person:salle_alumni",
+      "@type": "Person",
+      "label": "Usuari executor: salle_alumni",
+      "actedOnBehalfOf": {
+        "@id": "https://ror.org/01y990p52",
+        "@type": "Organization",
+        "label": "La Salle"
+      }
+    }
+  ],
+  "generated": [
+    {
+      "@type": "Entity",
+      "label": "Verificació SHA256",
+      "description": "Resultat de la comprovació de checksum a destí",
+      "value": "3D_115_S5_R1_001.fastq.gz: ERROR: Checksum mismatch 3D_115_S5_R2_001.fastq.gz: ERROR: Checksum mismatch"
+    },
+    {
+      "@type": "Entity",
+      "label": "Verificació Seqfu",
+      "description": "Resultat de la comprovació d'integritat del format FASTQ",
+      "value": "FAILED 3D_115_S5_R1_001.fastq.gz 0 0 0"
+    },
+    {
+      "@type": "Entity",
+      "label": "FASTQ Files",
+      "totalSizeBytes": "2475323503",
+      "category": "Genet",
+      "fileCount": "2"
+    }
+  ]
+}

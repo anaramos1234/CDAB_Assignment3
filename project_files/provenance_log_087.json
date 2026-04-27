@@ -1,0 +1,61 @@
+{
+  "@context": "http://www.w3.org/ns/prov#",
+  "@id": "urn:uuid:b8ec644f-360a-4c82-8211-57c862234697",
+  "@type": "Activity",
+  "label": "Processament complet de 3D_187_S2",
+  "startTime": "2026-04-27T15:15:00Z",
+  "endTime": "2026-04-27T15:27:00Z",
+  "executionNode": "darkrai",
+  "sourceDirectory": "/data/input/",
+  "destinationDirectory": "/data/output/3D_187_S2",
+  "wasAssociatedWith": [
+    {
+      "@type": "SoftwareAgent",
+      "label": "seqfu",
+      "version": "1.22.3"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "sha256sum",
+      "version": "sha256sum (GNU coreutils) 8.32"
+    },
+    {
+      "@type": "SoftwareAgent",
+      "label": "Pipeline Nextflow fastq_prov",
+      "repository": "local",
+      "commitId": "N/A",
+      "revision": "N/A"
+    },
+    {
+      "@id": "urn:person:salle_alumni",
+      "@type": "Person",
+      "label": "Usuari executor: salle_alumni",
+      "actedOnBehalfOf": {
+        "@id": "https://ror.org/01y990p52",
+        "@type": "Organization",
+        "label": "La Salle"
+      }
+    }
+  ],
+  "generated": [
+    {
+      "@type": "Entity",
+      "label": "Verificació SHA256",
+      "description": "Resultat de la comprovació de checksum a destí",
+      "value": "3D_187_S2_R1_001.fastq.gz: ERROR: Checksum mismatch 3D_187_S2_R2_001.fastq.gz: ERROR: Checksum mismatch"
+    },
+    {
+      "@type": "Entity",
+      "label": "Verificació Seqfu",
+      "description": "Resultat de la comprovació d'integritat del format FASTQ",
+      "value": "OK PE 3D_187_S2_R1_001.fastq.gz 0 0 0"
+    },
+    {
+      "@type": "Entity",
+      "label": "FASTQ Files",
+      "totalSizeBytes": "4332217962",
+      "category": "Genet",
+      "fileCount": "2"
+    }
+  ]
+}
